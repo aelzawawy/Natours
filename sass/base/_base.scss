@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: inherit; /*inherited from the body*/
+}
+html {
+  // This is 1 rem ( our 10px / default 16px)
+  font-size: 62.5%;
+
+  @include response(big-desktop) {
+    font-size: 75%;
+  }
+  @include response(tab-landscae) {
+    font-size: 56.25%;
+  }
+  @include response(tab-portrait) {
+    font-size: 50%;
+  }
+  @include response(phone) {
+    font-size: 43.75%;
+  }
+}
+body {
+  box-sizing: border-box;
+  padding: 1.5vw;
+
+  @include response(tab-portrait) {
+    padding: 0vw;;
+  }
+}

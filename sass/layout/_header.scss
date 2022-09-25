@@ -1,0 +1,33 @@
+.header {
+  position: relative;
+  height: 95vh;
+  background: $background-gradient, url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  @include response(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+  }
+  @include response(tab-portrait) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+  }
+
+  &__logo {
+    height: 4rem;
+  }
+
+  &__text-box {
+    height: 80%;
+    gap: 6rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

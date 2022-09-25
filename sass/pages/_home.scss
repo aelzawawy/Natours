@@ -1,0 +1,159 @@
+.about-section {
+  background-color: $color-grey-light-1;
+  padding: 20rem 0;
+  margin-top: -20rem;
+
+  & .row {
+    @include response(tab-portrait) {
+      @include flexCol;
+      align-items: center;
+    }
+  }
+  @include response(phone) {
+    margin-top: -15rem;
+  }
+  @include response(tab-portrait) {
+    margin-top: -17rem;
+    padding-bottom: 50rem;
+  }
+}
+.features-section {
+  background: $background-gradient, url(../img/nat-4.jpg);
+  padding: 20rem 0;
+  background-size: cover;
+  margin-top: -8rem;
+  transform: skewY(-5deg);
+  & > * {
+    transform: skewY(5deg);
+  }
+
+  & .row {
+    @include response(tab-landscape) {
+      @include flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    @include response(tab-portrait) {
+      @include flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+  }
+
+  @include response(tab-portrait) {
+    margin-top: -12rem;
+    padding: 6rem 0;
+  }
+  @include response(phone) {
+    margin-top: -9rem;
+  }
+}
+.tours-section {
+  @include flexCol;
+  gap: 2rem;
+  align-items: center;
+  background-color: $color-grey-light-1;
+  padding: 20rem 0;
+  margin-top: -8rem;
+
+  & .row {
+    @include response(tab-landscape) {
+      @include flex;
+      justify-content: space-between;
+      max-width: 87rem;
+      gap: 3rem;
+    }
+    @include response(tab-portrait) {
+      max-width: 75rem;
+    }
+  }
+  @include response(tab-portrait) {
+    padding: 13rem 0;
+    padding-bottom: 5rem;
+  }
+}
+.stories-section {
+  position: relative;
+  padding-block: 10rem;
+  @include flexCol;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+
+  @include response(tab-portrait) {
+    padding: 5rem 0;
+    padding-bottom: 0rem;
+  }
+  @include response(phone) {
+    padding-bottom: 2rem;
+  }
+
+  & .row {
+    margin-bottom: 5rem;
+    @include response(phone) {
+      margin-bottom: 0;
+    }
+  }
+  & .heading-secondary {
+    padding-left: 5rem;
+  }
+}
+.booking-section {
+  background: $gardient-green;
+  padding: 15rem 0;
+
+  @include response(tab-landscape) {
+    padding: 0;
+  }
+}
+.book {
+  background: linear-gradient(
+      105deg,
+      rgba($color-white, 0.8) 0%,
+      rgba($color-white, 0.8) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: cover;
+  height: 50rem;
+  width: 100%;
+
+  @include response(tab-portrait) {
+    background: linear-gradient(
+        105deg,
+        rgba($color-white, 0.8) 0%,
+        rgba($color-white, 0.8) 60%,
+        transparent 60%
+      ),
+      url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+  @include response(phone) {
+    background: linear-gradient(
+        105deg,
+        rgba($color-white, 0.8) 0%,
+        rgba($color-white, 0.8) 70%,
+        transparent 70%
+      ),
+      url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+  &__form {
+    width: 50%;
+    padding: 6rem;
+    & .heading-secondary {
+      &:hover {
+        transform: skewX(0);
+      }
+    }
+
+    @include response(tab-portrait) {
+      width: 60%;
+    }
+    @include response(phone) {
+      width: 80%;
+    }
+  }
+}

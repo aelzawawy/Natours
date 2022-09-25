@@ -1,0 +1,59 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin flex {
+  display: flex;
+}
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+}
+@mixin link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: $default-font-size;
+  font-weight: 400;
+  padding: 2rem 4rem;
+}
+//////////////////
+// Media queries
+// Break points
+/*
+
+phone <600
+tab-portrait < 900
+tab-landscae < 1200
+default 1200:1800
+big-desktop 1800+
+1em = 16px
+
+ORDER => Base+typography => general layout => page layout => components
+*/
+
+@mixin response($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { //600px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-portrait {
+    @media (max-width: 56.25em) { //900px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-landscape {
+    @media (max-width: 75em) { //1200px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) { //1800px
+      @content;
+    }
+  }
+}

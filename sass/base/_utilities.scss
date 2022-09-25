@@ -1,0 +1,25 @@
+.flex {
+  display: flex;
+}
+.u-center-text {
+  display: flex;
+  justify-content: center;
+}
+.u-margin-bottom {
+  margin-bottom: $XXlarge-font-size;
+  @include response(phone) {
+    margin-bottom: $default-font-size;
+  }
+}
+.u-margin-bottom-sm {
+  margin-bottom: $default-font-size;
+}
+.u-margin-top {
+  margin-top: $XXlarge-font-size;
+  @include response(phone) {
+    margin-top: $default-font-size;
+  }
+}
+.u-margin-top-sm {
+  margin-top: $large-font-size;
+}

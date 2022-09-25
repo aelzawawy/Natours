@@ -1,0 +1,60 @@
+.row {
+  max-width: $grid-width; //1140px
+  margin: 0 auto;
+  @include flex;
+  gap: $gutter-horizoatl;
+
+  @include response(phone) {
+    @include flexCol;
+    align-items: center;
+  }
+
+  [class^="col-"] {
+    color: $color-grey-dark;
+  }
+
+  .col-1-of-2 {
+    width: calc(#{$grid-width} / 2);
+    @include response(phone) {
+      width: 90%;
+    }
+  }
+
+  .col-1-of-3 {
+    width: calc(#{$grid-width} / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(#{$grid-width} * (2 / 3) + #{$gutter-horizoatl});
+    @include response(phone) {
+      width: 90%;
+    }
+  }
+
+  .col-1-of-4 {
+    width: calc(#{$grid-width} / 4);
+    @include response(tab-landscape) {
+      width: 40%;
+    }
+    @include response(tab-portrait) {
+      width: 38%;
+    }
+    @include response(phone) {
+      width: 60%;
+    }
+  }
+
+  .col-2-of-4 {
+    width: calc((#{$grid-width} / 2) + #{$gutter-horizoatl});
+    @include response(phone) {
+      width: 90%;
+    }
+  }
+
+  .col-3-of-4 {
+    width: calc((#{$grid-width} * (3 / 4)) + #{$gutter-horizoatl}* 2);
+    @include response(phone) {
+      width: 90%;
+    }
+  }
+}

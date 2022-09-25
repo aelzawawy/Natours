@@ -1,0 +1,63 @@
+.footer {
+  @include flexCol;
+  gap: 5rem;
+  align-items: center;
+  background: $color-grey-dark-2;
+  color: $color-white;
+  padding-block: 10rem;
+
+  & .row {
+    @include response(tab-landscape) {
+      @include flex;
+      max-width: 75rem;
+      gap: 3rem;
+    }
+  }
+
+  @include response(phone) {
+    padding-block: 5rem;
+  }
+
+  &__logo-box {
+    transform: scale(0.6);
+  }
+  &__list {
+    display: inline-block;
+    @include flex;
+    padding-top: 2rem;
+    border-top: 1px solid;
+
+    @include response(phone) {
+      flex-wrap: wrap;
+    }
+    @include response(tab-landscape) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &__item {
+    list-style: none;
+  }
+  &__link {
+    display: inline-block;
+    @include link;
+    white-space: nowrap;
+    color: $color-white;
+    padding: 0 1rem;
+    transition: all 0.2s;
+    &:hover {
+      color: $primary-color;
+      transform: rotate(5deg) scale(1.2);
+      box-shadow: 0 1rem 1rem #000;
+    }
+  }
+  &__copyright {
+    padding-top: 2rem;
+    border-top: 1px solid;
+    text-align: center;
+    & .footer__link {
+      padding: 0;
+      border-top: none;
+    }
+  }
+}
